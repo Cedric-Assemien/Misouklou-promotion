@@ -1,0 +1,300 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+
+<!-- Mirrored from demo.graygrids.com/themes/edugrids/contact by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 20:13:38 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Contactez nous</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="{% static 'image/x-icon' %}" href=" {% static 'assets/images/favicon.svg' %}" /> 
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Web Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/LineIcons.2.0.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/tiny-slider.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/glightbox.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header style2 navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                <div class="nav-inner">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="index">
+                            <img src="{% static 'assets/images/logo/Logo misouklou.png' %} " alt="Logo">
+                        </a>
+                        <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ms-auto">
+                                <li class="nav-item"><a href="{% url 'index' %}">Akwaba</a></li>                                   
+                                    
+                                <li class="nav-item"><a href="{% url 'blog-grid-sidebar' %}">Nos services</a></li>
+                                  
+                                <li class="nav-item"><a href="{% url 'contact' %}">Contactez-nous</a></li>
+
+                                <li class="nav-item"><a href="{% url 'about-us' %}">A propos</a></li>
+                            </ul>
+                            <form class="d-flex search-form">
+                                <input class="form-control me-2" type="search" placeholder="Rechercher"
+                                    aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit"><i
+                                        class="lni lni-search-alt"></i></button>
+                            </form>
+                        </div> <!-- navbar collapse -->
+                    </nav> <!-- navbar -->
+                </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">Contactez-nous</h1>
+                        <p>Nous sommes ravis de vous accueillir sur notre site dédié à la gestion d'établissement MISOUKLOU. Si vous avez des questions, des suggestions ou si vous souhaitez en savoir plus sur notre projet, n'hésitez pas à nous contacter en utilisant le formulaire ci-dessous. Nous vous répondrons dans les plus brefs délais.</p>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="{% url 'index' %}">Akwaba</a></li>
+                        <li>Contacte</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Start Contact Area -->
+    <section id="contact-us" class="contact-us section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-12">
+                    <div class="form-main">
+                        <h3 class="title"><span></span>
+                            Contactez notre équipe pour en savoir plus sur MISOUKLOU
+                        </h3>
+                        <h5 style="color:green"> {{ messages }} </h5>
+                          
+                        
+                        <form class="form" method="post" action="">
+                           {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <div class="form-group">
+                                        <label>Votre Nom</label>
+                                        <input name="nom" type="text" placeholder="" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12">
+                                    <div class="form-group">
+                                        <label>Votre Sujet</label>
+                                        <input name="sujet" type="text" placeholder=""
+                                            required="required">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12">
+                                    <div class="form-group">
+                                        <label>Votre Adresse Email</label>
+                                        <input name="email" type="email" placeholder="" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12">
+                                    <div class="form-group">
+                                        <label>Votre Numéro de Téléphone</label>
+                                        <input name="telephone" type="text" placeholder="" required="required">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group message">
+                                        <label>Votre Message</label>
+                                        <textarea name="message" placeholder=""></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group button">
+                                        <button type="submit" class="btn ">Soumettre votre Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="contact-info">
+                        <!-- Start Single Info -->
+                        <div class="single-info">
+                            <i class="lni lni-map-marker"></i>
+                            <h4>VISITEZ NOTRE BUREAU</h4>
+                            <p class="no-margin-bottom">Institut Ivoirienne de Technologie
+                                <br> Grand-Bassam, Zone du Vitib </p>
+                        </div>
+                        <!-- End Single Info -->
+                        <!-- Start Single Info -->
+                        <div class="single-info">
+                            <i class="lni lni-phone"></i>
+                            <h4>CONTACTEZ-NOUS PAR TELEPHONE</h4>
+                            <p class="no-margin-bottom">Phone: (+225) 0757 811 676
+                                <br> Fax: 123 456 789</p>
+                        </div>
+                        <!-- End Single Info -->
+                        <!-- Start Single Info -->
+                        <div class="single-info">
+                            <i class="lni lni-envelope"></i>
+                            <h4>FORMULAIRE DE CONTACT</h4>
+                            <p class="no-margin-bottom"><a href="mailto:info@yourdomain.com">info@yourdomain.com</a>
+                                <br> <a href="www.iit.ci">www.iit.ci</a></p>
+                        </div>
+                        <!-- End Single Info -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End Contact Area -->
+
+    <!-- Start Google-map Area -->
+    <div class="map-section">
+        <div class="mapouter">
+            <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48186.18396911852!2d-3.802540788443856!3d5.2287239645186085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1f7ee879ba037%3A0x100b7054af5ebb04!2sLe%20Village%20des%20Technologies%20de%20l%E2%80%99Information%20et%20de%20la%20Biotechnologie!5e0!3m2!1sfr!2sci!4v1713540401125!5m2!1sfr!2sci" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- End Google-map Area -->
+
+    <!-- Start Footer Area -->
+    <footer class="footer style2">
+        <!-- Start Middle Top -->
+        <div class="footer-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <!-- Single Widget -->
+                        <div class="f-about single-footer">
+                            <div class="logo">
+                                <a href="{% url 'index' %}"><img src="{% static 'assets/images/logo/Logo misouklou.png' %}" alt="Logo"></a>
+                            </div>
+                            <p>Restez connectés avec nous ! Suivez-nous sur nos réseaux sociaux pour être informé de nos dernières actualités, promotions exclusives et événements à venir. Rejoignez notre communauté en ligne et partagez votre expérience avec nous !</p>
+                            <div class="footer-social">
+                                <ul>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-original"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-google"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-12">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <!-- Single Widget -->
+                               
+                                <!-- End Single Widget -->
+                            </div>
+                           
+                            <div class="col-lg-4 col-md-12 col-12">
+                                <!-- Single Widget -->
+                                <div class="single-footer footer-newsletter">
+                                    <h3>Horaires d'ouverture</h3>
+                                    <p>Réservez un rendez-vous pour une démonstration de notre solution MISOUKLOU. Nous sommes disponibles du lundi au vendredi, de 8h à 17h.</p>
+                                    <form action="https://demo.graygrids.com/themes/edugrids/mail/mail.php" method="get" target="_blank" class="newsletter-form">
+                                        <input name="EMAIL" placeholder="Your email address" class="common-input"
+                                            onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Votre Email'" required="" type="email">
+                                        <div class="button">
+                                            <button class="btn">Reservez un rendez-vous</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- End Single Widget -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Footer Middle -->
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="inner">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="left">
+                                <p>L'equipe de développeur<a href="" rel="nofollow"
+                                    target="_blank">Misouklou gestion d'établissement</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Middle -->
+    </footer>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/count-up.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/tiny-slider.js' %}"></script>
+    <script src="{% static 'assets/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from demo.graygrids.com/themes/edugrids/contact by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 20:13:38 GMT -->
+</html>
