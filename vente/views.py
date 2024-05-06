@@ -20,7 +20,7 @@ def contact(request):
      message = request.POST.get('message')
      formul= form_contact.objects.create(nom=nom, sujet=sujet, email=email, message=message, telephone=telephone)
      formul.save()
-     messages= "Nous avons réçu votre méssage,vérifier votre mail svp"
+     messages= "Merci {},nous avons réçu votre méssage,vérifier votre mail svp.".format(formul.nom)
      
      email_user = formul.email
      email_init= settings.EMAIL_HOST_USER
